@@ -153,7 +153,7 @@ static int _parse_float(const char *fstr, char delim, strato3_float_t *f)
     }
     f->value = value;
     f->scale = scale;
-    debug_print("%s: (%d, %d)\n", __func__, f->value, f->scale);
+    debug_print("%s: (%d, %d)\n", __func__, (int)f->value, (int)f->scale);
     return 0;
 }
 
@@ -193,7 +193,7 @@ int strato3_parse(const char *line, strato3_data_t *data)
 {
     debug_print("%s\n",__func__);
     char delim = _check_and_find_delim(line);
-    if (delim < 0) {
+    if (!isprint(delim)) {
         return -1;
     }
     int error = 0;

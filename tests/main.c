@@ -7,9 +7,8 @@
 
 #include "strato3.h"
 
-char strings[][] = {
-    "$;00:05:13;19:36:26;13.09.2016;Y;04;40 40.68437 N;005 30.70415 E;0.432;0.800;;91.2;11.625;12.625;37.56;1009.809;8.6;66679",
-};
+char line[] = "$;00:05:13;19:36:26;13.09.2016;Y;04;40 40.68437 N;005 30.70415 E;0.432;0.800;;91.2;11.625;12.625;37.56;1009.809;8.6;66679";
+
 void strato3_print(const strato3_data_t *data)
 {
     printf("strato3_data = {\n");
@@ -34,7 +33,6 @@ void strato3_print(const strato3_data_t *data)
 }
 
 int main(void) {
-    char line[] = "$;00:05:13;19:36:26;13.09.2016;Y;04;40 40.68437 N;005 30.70415 E;0.432;0.800;;91.2;11.625;12.625;37.56;1009.809;8.6;66679";
     strato3_data_t data;
     int ret = strato3_parse(line, &data);
     strato3_print(&data);
