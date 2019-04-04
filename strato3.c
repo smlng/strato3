@@ -197,7 +197,6 @@ int strato3_parse(const char *line, strato3_data_t *data)
         return -1;
     }
     int error = 0;
-    size_t len = strlen(line);
     const char *pos = line;
     strato3_field_t field = STRATO3_FIELD_BEGIN;
     while ((field < STRATO3_FIELD_END) && (pos != NULL)) {
