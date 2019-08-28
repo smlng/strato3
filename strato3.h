@@ -10,11 +10,11 @@ extern "C" {
 #include <stdbool.h>
 #include <math.h>
 
-#ifndef DEBUG
-#define DEBUG (0)
+#ifndef STRATO3_DEBUG
+#define STRATO3_DEBUG (0)
 #endif
 #define debug_print(...) \
-            do { if (DEBUG) fprintf(stderr, __VA_ARGS__); } while (0)
+            do { if (STRATO3_DEBUG) fprintf(stderr, __VA_ARGS__); } while (0)
 
 
 typedef struct stato3_time {
